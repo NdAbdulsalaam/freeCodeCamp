@@ -1,0 +1,52 @@
+*, body {
+  box-sizing: border-box;
+  background-color: #eee;
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  min-height: 60px;
+  align-items: center;
+  display: flex;
+}
+
+h4 {
+  text-align: center;
+}
+
+#header-img {
+  width: 80%;
+}
+
+nav {
+  top: 0px;
+}
+
+.my-email-sub p {
+  display: block;
+  margin: 0 auto;
+}
+
+.chart-img {
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.my-email-sub > input {
+  display: block;
+  margin-top: 4px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Additional styling for video container */
+#about {
+  padding: 20px;
+}
+
+#video {
+  max-width: 100%;
+  height: auto;
+}
