@@ -1,0 +1,6 @@
+#image {
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    display: block;
+    /* margin: 5px auto; */
+  }
