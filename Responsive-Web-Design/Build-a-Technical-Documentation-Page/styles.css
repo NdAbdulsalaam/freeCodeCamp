@@ -1,0 +1,8 @@
+body {
+    width: 780px;
+  }
+  @media(max-width:450px) {
+    main{
+    width: 350px;
+    }
+  }
