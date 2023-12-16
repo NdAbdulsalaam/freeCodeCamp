@@ -60,9 +60,9 @@ function getQuote() {
       encodeURIComponent('"' + currentQuote + '" ' + currentAuthor)
   );
 
-  $('#tumblr-quote').attr(
+  $('#linkedin-quote').attr(
     'href',
-    'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' +
+    'https://www.linkedin.com/shareArticle?url=your-quote-url&title=Your%20Quote&summary=Your%20Quote%20Caption=' +
       encodeURIComponent(currentAuthor) +
       '&content=' +
       encodeURIComponent(currentQuote) +
