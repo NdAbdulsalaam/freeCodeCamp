@@ -87,7 +87,7 @@ body {
 #quote-box .buttons .button:hover {
   opacity: 0.9;
 }
-#quote-box .buttons .button#tweet-quote, #quote-box .buttons .button#linkedin-quote {
+#quote-box .buttons .button#tweet-quote, #quote-box .buttons .button#tumblr-quote {
   float: left;
   padding: 0px;
   padding-top: 8px;
