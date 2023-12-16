@@ -1,5 +1,5 @@
 {
-  "name": "random-quote-machine",
+  "name": "react-random-quote-machine",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
