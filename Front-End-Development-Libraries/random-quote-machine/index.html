@@ -2,43 +2,35 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <!-- <meta w -->
-        <link
-        rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-        />
-        <!-- <link rel="stylesheet" href="styles.css" /> -->
-        <link rel="stylesheet" href="styles.scss" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>quote machine</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
     </head>
     <body>
         <div id="wrapper">
         <div id="quote-box">
+            <!-- Quote text -->
             <div class="quote-text">
-            <i class="fa fa-quote-left"> </i><span id="text"></span>
+            <i class="fa fa-quote-left"></i><span id="text"></span>
             </div>
+            <!-- Quote author -->
             <div class="quote-author">- <span id="author"></span></div>
+            <!-- Buttons for sharing and getting a new quote -->
             <div class="buttons">
-            <a
-                class="button"
-                id="tweet-quote"
-                title="Tweet this quote!"
-                target="_top"
-            >
+            <a class="button" id="tweet-quote" title="Tweet this quote!" target="_top">
                 <i class="fa fa-twitter"></i>
             </a>
-            <a
-                class="button"
-                id="tumblr-quote"
-                title="Post this quote on tumblr!"
-                target="_blank"
-            >
+            <a class="button" id="tumblr-quote" title="Post this quote on tumblr!" target="_blank">
                 <i class="fa fa-tumblr"></i>
             </a>
             <button class="button" id="new-quote">New quote</button>
             </div>
         </div>
-        <div class="footer">by <a href="https://codepen.io/hezag/">hezag</a></div>
+        <!-- Footer with a link to the author's CodePen profile -->
+        <div class="footer">by <a href="https://github.com/ndabdulsalaam" target="_blank">Nurudeen Abdulsalaam</a></div>
         </div>
+
 
         <script src="index.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
