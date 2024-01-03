@@ -8,14 +8,23 @@ const Navbar = () => {
         return setDropdown((prev) => !prev)
     }
 
-    useEffect(() => {
-        const handler = (event) => {
-            if (dropdown && ref.current && !ref.current.contains(event.target)) {
-                setDropdown(!dropdown);
+    const handleOutsideClick = (ref, currentState, updater) => {
+        useEffect(() => {
+            const handler = (event) => {
+                if (dropdown && ref.current && !ref.current.contains(event.target)) {
+                    setDropdown(false);
+                    // updater();
+                }
+            };
+            document.addEventListener("mousedown", handler);
+            return () => {
+                document.removeEventListener("mousedown", handler);
             }
-        };
-        document.addEventListener("mousedown", handler);
-    }, [dropdown])
+
+        }, [ref, currentState, updater])
+    }
+
+    handleOutsideClick(ref, dropdown);
 
     return (
         <nav>
