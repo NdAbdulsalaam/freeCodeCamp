@@ -3,13 +3,17 @@ import { useState } from "react";
 const Navbar = () => {
     const [dropdown, setDropdown] = useState(false)
 
+    const handleClick = () => {
+        return setDropdown((prev) => !prev)
+    }
+
     return (
         <nav>
             <ul>
                 <li>Home</li> 
                 <li>About</li>
                 <li>
-                    <button onClick={() => setDropdown((prev) => !prev)}>
+                    <button onClick={handleClick}>
                         Services <span>&#8595;</span>
                     </button>
                     {dropdown && (
