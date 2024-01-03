@@ -1,4 +1,5 @@
 import InputTodo from '@/components/InputTodo';
+import TodosList from '@/components/TodosList';
 
 const TodosLogic = () => {
     // Create todos state
@@ -23,16 +24,9 @@ const TodosLogic = () => {
     return(
         <>
             <InputTodo />
-            <div>TodosLogic contents will be here</div>
-            {
-                todos.map((todo) => (
-                    <li>{todo.title}</li>
-                ))
-            }
-
-            
+            <TodosList todosProps={todos} /> 
         </>
     )
 }
 
-export default TodosLogic
+export default TodosLogic;
