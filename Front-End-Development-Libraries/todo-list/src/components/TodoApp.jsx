@@ -7,7 +7,7 @@ const TodoApp = () => {
         // We can use "<> </>" instead of <React.Fragment> </React.Fragment>
         <>
         <Header />
-        {/* <TodosLogic /> */}
+        <TodosLogic />
         </>
     );
 };
