@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import handleOutsideClick from "./handleOutsideClick";
 
 const Navbar = () => {
     const [dropdown, setDropdown] = useState(false);
@@ -8,23 +9,8 @@ const Navbar = () => {
         return setDropdown((prev) => !prev)
     }
 
-    const handleOutsideClick = (ref, currentState, updater) => {
-        useEffect(() => {
-            const handler = (event) => {
-                if (dropdown && ref.current && !ref.current.contains(event.target)) {
-                    setDropdown(false);
-                    // updater();
-                }
-            };
-            document.addEventListener("mousedown", handler);
-            return () => {
-                document.removeEventListener("mousedown", handler);
-            }
-
-        }, [ref, currentState, updater])
-    }
-
-    handleOutsideClick(ref, dropdown);
+    // Setting state must be past as fxn when creating it as a component.
+    handleOutsideClick(ref, dropdown, () => setDropdown(false));
 
     return (
         <nav>
