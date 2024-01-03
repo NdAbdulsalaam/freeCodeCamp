@@ -1,3 +1,5 @@
+import InputTodo from '@/components/InputTodo';
+
 const TodosLogic = () => {
     // Create todos state
     const todos = [
@@ -20,12 +22,15 @@ const TodosLogic = () => {
 
     return(
         <>
+            <InputTodo />
             <div>TodosLogic contents will be here</div>
             {
                 todos.map((todo) => (
                     <li>{todo.title}</li>
                 ))
             }
+
+            
         </>
     )
 }
