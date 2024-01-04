@@ -12,7 +12,7 @@ const ContactApp = () => {
         price: 0,
     });
 
-    const carBrands = ["Toyota", "Lexux", "BMW", "Honda"]
+    const carBrands = ["Toyota", "Lexus", "BMW", "Honda"]
 
     const carBrandOptions = carBrands.map((brand, key) => (
             <option value={brand} key={key}>{brand}</option>
@@ -39,25 +39,25 @@ const ContactApp = () => {
             <form onSubmit={handleSubmit}>
                 <label>First name: {''}
                     <input name="fname" type="text" value={state.fname} onChange={handleChange} />
-                </label>
-                <label>Last name name: {''}
+                </label><br />
+                <label>Last name: {''}
                     <input name="lname" type="text" value={state.lname} onChange={handleChange} />
-                </label>
+                </label><br />
                 <label>
                     Your message: 
                     <textarea name="message" placeholder="Enter your message" value={state.message} onChange={handleChange} />
-                </label>
+                </label><br />
                 <label>
                     Car brand:
                     <select name="carBrand" value={state.carBrand} onChange={handleChange}>
                         <option value={''} disabled>Pick a car brand</option>
                         {carBrandOptions}
                     </select>
-                </label>
+                </label><br />
                 <label>
                     <input type="checkbox" name="isChecked" value={state.isChecked} onChange={handleChange} />
                     Is checked?
-                </label>
+                </label><br />
                 <label>
                     <input type="radio" name="sex" value="male" checked={state.sex === "male"} onChange={handleChange} />
                     {''} Male
@@ -65,11 +65,11 @@ const ContactApp = () => {
                 <label>
                     <input type="radio" name="sex" value="female" checked={state.sex === "female"} onChange={handleChange} />
                     {''} Female
-                </label>
+                </label><br />
                 <label>
-                    Price (between 0 and 50) {''}
+                    Price (between 0 and 50) {''}<br />
                     <input type="range" name="price" value={state.price} min="0" max="50" onChange={handleChange} />
-                </label>
+                </label><br />
 
                 <button>Submit</button>
             </form>
