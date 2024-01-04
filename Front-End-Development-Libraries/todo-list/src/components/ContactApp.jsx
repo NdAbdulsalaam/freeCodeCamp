@@ -8,6 +8,13 @@ const ContactApp = () => {
         message: '',
         carBrand: '',
     });
+
+    const carBrands = ["Toyota", "Lexux", "BMW", "Honda"]
+
+    const carBrandOptions = carBrands.map((brand, key) => (
+            <option value={brand} key={key}>{brand}</option>
+    ));
+
     const handleChange = (e) =>{
         setState((state) => ({
             ...state,
@@ -36,6 +43,7 @@ const ContactApp = () => {
                     <select name="carBrand" value={state.carBrand} onChange={handleChange}>
                         <option value={''} disabled>Pick a car brand</option>
                         {carBrandOptions}
+                        {/* < carBrandOptions /> */}
                     </select>
                 </label>
             </form>
