@@ -37,7 +37,11 @@ const TodosLogic = () => {
     };
 
     const delTodo = (id) => {
-        console.log('clicked', id)
+        setTodos([
+            ...todos.filter((todo) => {
+                return todo.id !== id;
+            }),
+        ])
     }
 
     return(
