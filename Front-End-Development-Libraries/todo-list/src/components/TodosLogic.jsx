@@ -7,17 +7,17 @@ const TodosLogic = () => {
     // Create todos state
     const [todos, setTodos] = useState([
         {
-            id: uuidv4,
+            id: uuidv4(),
             title: 'Setup development environment',
             completed: false,
         },
         {
-            id: uuidv4,
+            id: uuidv4(),
             title: 'Develop website and add content',
             completed: false,
         },
         {
-            id: uuidv4,
+            id: uuidv4(),
             title: 'Deploy to live server',
             completed: false,
         },
@@ -45,9 +45,18 @@ const TodosLogic = () => {
         ])
     }
 
+    const addNewTodo = (todo) => {
+        const newTodo = {
+            id: uuidv4(),
+            title: todo,
+            completed: false,
+        };
+        setTodos([...todos, newTodo]);
+    }
+
     return(
         <>
-            <InputTodo />
+            <InputTodo addNewTodo={addNewTodo} />
             <TodosList todosProps={todos} handleChange={handleChange} delTodo={delTodo} /> 
         </>
     )
