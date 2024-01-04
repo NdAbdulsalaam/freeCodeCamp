@@ -26,12 +26,17 @@ const ContactApp = () => {
         }));
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(state)
+    };
+
     return (
         <>
             <Navbar />
 
             <h1>Contact Form</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>First name: {''}
                     <input name="fname" type="text" value={state.fname} onChange={handleChange} />
                 </label>
@@ -65,6 +70,8 @@ const ContactApp = () => {
                     Price (between 0 and 50) {''}
                     <input type="range" name="price" value={state.price} min="0" max="50" onChange={handleChange} />
                 </label>
+
+                <button>Submit</button>
             </form>
             <h3>Name: {state.fname} {state.lname}</h3>
             <h4>Message: {state.message}</h4>
