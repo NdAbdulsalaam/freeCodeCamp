@@ -6,6 +6,7 @@ const ContactApp = () => {
         fname: '',
         lname: '',
         message: '',
+        carBrand: '',
     });
     const handleChange = (e) =>{
         setState((state) => ({
@@ -29,6 +30,13 @@ const ContactApp = () => {
                 <label>
                     Your message: 
                     <textarea name="message" placeholder="Enter your message" value={state.message} onChange={handleChange} />
+                </label>
+                <label>
+                    Car brand:
+                    <select name="carBrand" value={state.carBrand} onChange={handleChange}>
+                        <option value={''} disabled>Pick a car brand</option>
+                        {carBrandOptions}
+                    </select>
                 </label>
             </form>
             <h3>Name: {state.fname} {state.lname}</h3>
