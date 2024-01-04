@@ -4,7 +4,8 @@ import Navbar from "./Navbar";
 const ContactApp = () => {
     const [state, setState] = useState({
         fname: '',
-        lname: ''
+        lname: '',
+        message: '',
     });
     const handleChange = (e) =>{
         setState((state) => ({
@@ -25,8 +26,14 @@ const ContactApp = () => {
                 <label>Last name name: {''}
                     <input name="lname" type="text" value={state.lname} onChange={handleChange} />
                 </label>
+                <label>
+                    Your message: 
+                    <textarea name="message" placeholder="Enter your message" value={state.message} onChange={handleChange} />
+                </label>
             </form>
-            Name: {state.fname} {state.lname}
+            <h3>Name: {state.fname} {state.lname}</h3>
+            <h4>Message: {state.message}</h4>
+
             {/* <h3>First name: {state.fname}</h3> */}
             {/* <h3>Last name: {state.lname}</h3> */}
         </>
