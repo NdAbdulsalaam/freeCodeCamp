@@ -59,11 +59,11 @@ const ContactApp = () => {
                     Is checked?
                 </label><br />
                 <label>
-                    <input type="radio" name="sex" value="Male" checked={state.sex === "male"} onChange={handleChange} />
+                    <input type="radio" name="sex" value="male" checked={state.sex === "male"} onChange={handleChange} />
                     {''} Male
                 </label>
                 <label>
-                    <input type="radio" name="sex" value="Female" checked={state.sex === "female"} onChange={handleChange} />
+                    <input type="radio" name="sex" value="female" checked={state.sex === "female"} onChange={handleChange} />
                     {''} Female
                 </label><br />
                 <label>
