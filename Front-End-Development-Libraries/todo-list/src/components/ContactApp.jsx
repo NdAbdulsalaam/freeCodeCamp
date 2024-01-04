@@ -53,20 +53,19 @@ const ContactApp = () => {
                     Is checked?
                 </label>
                 <label>
-                    <input type="radio" name="sex" value={state.sex} checked={state.sex === "male"} onChange={handleChange} />
+                    <input type="radio" name="sex" value="male" checked={state.sex === "male"} onChange={handleChange} />
                     {''} Male
                 </label>
                 <label>
-                    <input type="radio" name="sex" value={state.sex} checked={state.sex === "female"} onChange={handleChange} />
+                    <input type="radio" name="sex" value="female" checked={state.sex === "female"} onChange={handleChange} />
                     {''} Female
                 </label>
             </form>
             <h3>Name: {state.fname} {state.lname}</h3>
             <h4>Message: {state.message}</h4>
             <h4>Favourite car brand: {state.carBrand}</h4>
-
             <h4>Is it checked?: {state.isChecked? 'Yes': 'No'}</h4>
-            <h3>Sex / Gender: {state.sex}</h3>
+            <h4>Sex / Gender: {state.sex}</h4>
         </>
 
     );
