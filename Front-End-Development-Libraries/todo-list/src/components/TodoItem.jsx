@@ -4,6 +4,7 @@ const TodoItem = ({ ItemProps, handleChange }) => {
             <li>
                 <input type="checkbox" checked={ItemProps.completed} onChange={() =>handleChange(ItemProps.id)} />
                 {ItemProps.title}
+                <button>Delete</button>
             </li>
         </>
     );
