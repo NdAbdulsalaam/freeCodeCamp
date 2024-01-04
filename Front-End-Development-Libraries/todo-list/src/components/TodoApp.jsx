@@ -6,11 +6,13 @@ import Navbar from '@/components/Navbar';
 const TodoApp = () => {
     return (
         // We can use "<> </>" instead of <React.Fragment> </React.Fragment>
-        <>
-        <Navbar />
-        <Header />
-        <TodosLogic />
-        </>
+        <div className='wrapper'>
+            <div className='todos'>
+                {/* <Navbar /> */}
+                <Header />
+                <TodosLogic />
+            </div>
+        </div>
     );
 };
 
