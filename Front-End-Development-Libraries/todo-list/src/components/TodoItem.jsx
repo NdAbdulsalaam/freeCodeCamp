@@ -1,6 +1,7 @@
 const TodoItem = ({ ItemProps }) => {
     return(
         <>
+            <input type="checkbox" />
             <li>{ItemProps.title}</li>
         </>
     );

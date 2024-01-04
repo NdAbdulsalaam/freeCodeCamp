@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(domContainer)
 
 root.render(
   <React.StrictMode>
-    <ContactApp />
-    {/* <TodoApp /> */}
+    {/* <ContactApp /> */}
+    <TodoApp />
   </React.StrictMode>
 )
