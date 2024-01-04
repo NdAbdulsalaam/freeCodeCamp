@@ -1,7 +1,11 @@
 const InputTodo = () => {
     return(
         <>
-            <div>input field here...</div>
+            <form>
+                <input type="text" placeholder="Add Todo..." />
+                
+                <button>Submit</button>
+            </form>
         </>
     );
 }
