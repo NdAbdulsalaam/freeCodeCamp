@@ -17,10 +17,10 @@ const ContactApp = () => {
     ));
 
     const handleChange = (e) =>{
-        
+        const value = e.target.type ==='checkbox'? e.target.checked : e.target.value;
         setState((state) => ({
             ...state,
-            [e.target.name]: e.target.value
+            [e.target.name]: value
         }));
     };
 
