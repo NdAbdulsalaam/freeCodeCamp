@@ -43,12 +43,12 @@ const ContactApp = () => {
                     <select name="carBrand" value={state.carBrand} onChange={handleChange}>
                         <option value={''} disabled>Pick a car brand</option>
                         {carBrandOptions}
-                        {/* < carBrandOptions /> */}
                     </select>
                 </label>
             </form>
             <h3>Name: {state.fname} {state.lname}</h3>
             <h4>Message: {state.message}</h4>
+            <h4>Favourite car brand: {state.carBrand}</h4>
 
             {/* <h3>First name: {state.fname}</h3> */}
             {/* <h3>Last name: {state.lname}</h3> */}
