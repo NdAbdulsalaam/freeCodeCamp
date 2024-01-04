@@ -7,6 +7,7 @@ const ContactApp = () => {
         lname: '',
         message: '',
         carBrand: '',
+        isChecked: false,
     });
 
     const carBrands = ["Toyota", "Lexux", "BMW", "Honda"]
@@ -16,6 +17,7 @@ const ContactApp = () => {
     ));
 
     const handleChange = (e) =>{
+        
         setState((state) => ({
             ...state,
             [e.target.name]: e.target.value
@@ -45,12 +47,16 @@ const ContactApp = () => {
                         {carBrandOptions}
                     </select>
                 </label>
+                <label>
+                    <input type="checkbox" name="isChecked" value={state.isChecked} onChange={handleChange} />
+                    Is checked?
+                </label>
             </form>
             <h3>Name: {state.fname} {state.lname}</h3>
             <h4>Message: {state.message}</h4>
             <h4>Favourite car brand: {state.carBrand}</h4>
 
-            {/* <h3>First name: {state.fname}</h3> */}
+            <h4>Is it checked?: {state.isChecked? 'Yes': 'No'}</h4>
             {/* <h3>Last name: {state.lname}</h3> */}
         </>
 
