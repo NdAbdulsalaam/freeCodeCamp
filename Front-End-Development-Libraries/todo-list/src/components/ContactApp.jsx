@@ -7,10 +7,10 @@ const ContactApp = () => {
         lname: ''
     });
     const handleChange = (e) =>{
-        setState({
+        setState((state) => ({
             ...state,
             [e.target.name]: e.target.value
-        });
+        }));
     };
 
     return (
