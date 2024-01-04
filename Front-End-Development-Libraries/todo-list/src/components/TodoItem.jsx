@@ -1,4 +1,4 @@
-const TodoItem = ({ ItemProps }) => {
+const TodoItem = ({ ItemProps, setTodos }) => {
     return(
         <>
             <li>
