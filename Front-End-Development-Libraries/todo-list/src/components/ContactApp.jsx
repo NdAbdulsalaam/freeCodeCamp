@@ -9,6 +9,7 @@ const ContactApp = () => {
         carBrand: '',
         isChecked: false,
         sex: '',
+        price: 0,
     });
 
     const carBrands = ["Toyota", "Lexux", "BMW", "Honda"]
@@ -60,12 +61,17 @@ const ContactApp = () => {
                     <input type="radio" name="sex" value="female" checked={state.sex === "female"} onChange={handleChange} />
                     {''} Female
                 </label>
+                <label>
+                    Price (between 0 and 50) {''}
+                    <input type="range" name="price" value={state.price} min="0" max="50" onChange={handleChange} />
+                </label>
             </form>
             <h3>Name: {state.fname} {state.lname}</h3>
             <h4>Message: {state.message}</h4>
             <h4>Favourite car brand: {state.carBrand}</h4>
             <h4>Is it checked?: {state.isChecked? 'Yes': 'No'}</h4>
             <h4>Sex / Gender: {state.sex}</h4>
+            <h4>Price: ${state.price}</h4>
         </>
 
     );
