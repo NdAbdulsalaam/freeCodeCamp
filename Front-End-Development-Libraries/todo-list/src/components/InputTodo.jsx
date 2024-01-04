@@ -3,6 +3,7 @@ import { useState } from "react";
 const InputTodo = ({ addNewTodo }) => {
 
         const [todo, setTodo] = useState('')
+        const [message, setMessage] = useState('')
 
         const handleChange = (e) => {
             setTodo(e.target.value);
@@ -13,8 +14,9 @@ const InputTodo = ({ addNewTodo }) => {
             if (todo.trim()) {
                 addNewTodo(todo);
                 setTodo('');
+                setMessage('');
             } else {
-                alert('Please add item');
+                setMessage('Please add item');
             }
         }
 
@@ -25,6 +27,7 @@ const InputTodo = ({ addNewTodo }) => {
 
                 <button>Submit</button>
             </form>
+            <span>{message}</span>
         </>
     );
 }
