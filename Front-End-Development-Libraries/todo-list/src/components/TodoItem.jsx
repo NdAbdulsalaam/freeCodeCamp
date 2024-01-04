@@ -1,10 +1,11 @@
-const TodoItem = ({ ItemProps, handleChange }) => {
+const TodoItem = ({ ItemProps, handleChange, delTodo }) => {
     return(
         <>
             <li>
-                <input type="checkbox" checked={ItemProps.completed} onChange={() =>handleChange(ItemProps.id)} />
+                <input type="checkbox" checked={ItemProps.completed}
+                onChange={() =>handleChange(ItemProps.id)} />
                 {ItemProps.title}
-                <button>Delete</button>
+                <button onClick={() => delTodo(ItemProps.id)}>Delete</button>
             </li>
         </>
     );
