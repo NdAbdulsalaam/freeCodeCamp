@@ -26,7 +26,7 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
     }
 
     const handleEditDone = () => {
-        // editTodo(edited, ItemProps.id)
+        editTodo(edited, ItemProps.id)
         setEdit(false);
     }
     const handleEdited= (e) => {
