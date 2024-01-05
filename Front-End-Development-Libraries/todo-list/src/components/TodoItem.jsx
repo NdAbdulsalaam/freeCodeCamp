@@ -49,8 +49,8 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
                 <button onClick={handleEdit}>Edit</button>
                 <button onClick={() => delTodo(ItemProps.id)}>Delete</button>
             </div>
-            <div className={styles.textInput} style={editMode}>
-                <input type='text' value={ItemProps.title} 
+            <div style={editMode}>
+                <input type='text' value={ItemProps.title} className={styles.textInput}
                 onChange={handleEdited} onKeyDown={handleEditedDone} />
                 
                 <button onClick={handleEditDone}>Done</button>
