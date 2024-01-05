@@ -28,6 +28,7 @@ const TodoItem = ({ ItemProps, handleChange, delTodo }) => {
                 <button onClick={handleEdit}>Edit</button>
                 <button onClick={() => delTodo(ItemProps.id)}>Delete</button>
             </div>
+            <input type='text' value={ItemProps.title} className={styles.textInput} />
         </li>
     );
 };
