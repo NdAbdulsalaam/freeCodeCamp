@@ -1,6 +1,13 @@
 import styles from '@/styles/TodoItem.module.css';
+import { useState } from 'react';
 
 const TodoItem = ({ ItemProps, handleChange, delTodo }) => {
+
+    const [edit, setEdit] = useState(false);
+
+    const handleEdit = () => {
+        setEdit(true);
+    }
 
     const completedStyle = {
         fontStyle: 'italic',
@@ -17,6 +24,8 @@ const TodoItem = ({ ItemProps, handleChange, delTodo }) => {
                  <span style={ItemProps.completed ? completedStyle : null}>
                     {ItemProps.title}
                 </span>
+
+                <button onClick={handleEdit}>Edit</button>
                 <button onClick={() => delTodo(ItemProps.id)}>Delete</button>
             </div>
         </li>
