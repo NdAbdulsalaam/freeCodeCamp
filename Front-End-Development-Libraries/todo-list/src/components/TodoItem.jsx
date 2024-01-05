@@ -20,10 +20,13 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
         editMode.display = 'none'
     }
 
-      const handleEdit = () => {
+    const handleEdit = () => {
         setEdit(true);
     }
 
+    const handleEditDone = () => {
+        setEdit(false);
+    }
     const handleEdited= (e) => {
         return editTodo(e.target.value, ItemProps.id)
     }
@@ -46,9 +49,12 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
                 <button onClick={handleEdit}>Edit</button>
                 <button onClick={() => delTodo(ItemProps.id)}>Delete</button>
             </div>
-            <input type='text' value={ItemProps.title}
-            className={styles.textInput} style={editMode}
-            onChange={handleEdited} onKeyDown={handleEditedDone} />
+            <div className={styles.textInput} style={editMode}>
+                <input type='text' value={ItemProps.title} 
+                onChange={handleEdited} onKeyDown={handleEditedDone} />
+                
+                <button onClick={handleEditDone}>Done</button>
+            </div>
         </li>
     );
 };

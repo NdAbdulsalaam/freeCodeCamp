@@ -15,7 +15,15 @@
     flex: 1;
     order: 1;
   }
-  .content button {
+
+  .textInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dfdfdf;
+    outline: none;
+  }
+  
+  .content button, .textInput button {
     cursor: pointer;
     background: transparent;
     order: 2;
