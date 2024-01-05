@@ -2,16 +2,14 @@ import styles from '@/styles/TodoItem.module.css';
 import { useState } from 'react';
 
 const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
+    const completedStyle = {
+        fontStyle: 'italic',
+        color: '#595959',
+        opacity: 0.4,
+        textDecoration: 'line-through',
+      };
 
     const [edit, setEdit] = useState(false);
-
-    const handleEdit = () => {
-        setEdit(true);
-    }
-
-    const handleEdited= (e) => {
-        return editTodo(e.target.value, ItemProps.id)
-    }
 
     const editMode = {};
     const viewMode = {};
@@ -21,12 +19,20 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
     } else {
         editMode.display = 'none'
     }
-    const completedStyle = {
-        fontStyle: 'italic',
-        color: '#595959',
-        opacity: 0.4,
-        textDecoration: 'line-through',
-      };
+
+      const handleEdit = () => {
+        setEdit(true);
+    }
+
+    const handleEdited= (e) => {
+        return editTodo(e.target.value, ItemProps.id)
+    }
+
+    const handleEditedDone = (event) => {
+        if (event.key === 'Enter') {
+            setEdit(false);
+        }
+    }
 
     return(
         <li className={styles.item}>
@@ -41,7 +47,8 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
                 <button onClick={() => delTodo(ItemProps.id)}>Delete</button>
             </div>
             <input type='text' value={ItemProps.title}
-            className={styles.textInput} style={editMode}  onChange={handleEdited} />
+            className={styles.textInput} style={editMode}
+            onChange={handleEdited} onKeyDown={handleEditedDone} />
         </li>
     );
 };
