@@ -10,6 +10,7 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
       };
 
     const [edit, setEdit] = useState(false);
+    const [edited, setEdited] = useState(ItemProps.title)
 
     const editMode = {};
     const viewMode = {};
@@ -25,14 +26,16 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
     }
 
     const handleEditDone = () => {
+        // editTodo(edited, ItemProps.id)
         setEdit(false);
     }
     const handleEdited= (e) => {
-        return editTodo(e.target.value, ItemProps.id)
+        return setEdited(e.target.value)
     }
 
     const handleEditedDone = (event) => {
         if (event.key === 'Enter') {
+            editTodo(edited, ItemProps.id)
             setEdit(false);
         }
     }
@@ -43,14 +46,14 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
                 <input type="checkbox" checked={ItemProps.completed}
                 onChange={() =>handleChange(ItemProps.id)} />
                  <span style={ItemProps.completed ? completedStyle : null}>
-                    {ItemProps.title}
+                    {edited}
                 </span>
 
                 <button onClick={handleEdit}>Edit</button>
                 <button onClick={() => delTodo(ItemProps.id)}>Delete</button>
             </div>
             <div style={editMode}>
-                <input type='text' value={ItemProps.title} className={styles.textInput}
+                <input type='text' value={edited} className={styles.textInput}
                 onChange={handleEdited} onKeyDown={handleEditedDone} />
                 
                 <button onClick={handleEditDone}>Done</button>
