@@ -58,4 +58,9 @@
     margin-top: 5px;
     display: block;
   }
-  
+
+.input-submit, .delete, .edit, .done svg {
+  color: #5e5e7e;
+  font-size: 20px;
+  margin-top: 2px;
+}

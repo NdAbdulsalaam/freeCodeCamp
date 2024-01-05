@@ -55,8 +55,8 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
                     {ItemProps.title}
                 </span>
 
-                <button onClick={handleEdit}>< AiFillEdit /></button>
-                <button onClick={() => delTodo(ItemProps.id)}><VscTrash /></button>
+                <button onClick={handleEdit} className='edit'>< AiFillEdit /></button>
+                <button onClick={() => delTodo(ItemProps.id)} className='delete'><VscTrash /></button>
             </div>
             <div style={editMode}>
                 <input type='text'  className={styles.textInput}
@@ -65,7 +65,7 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
                 defaultValue={ItemProps.title}
                 onKeyDown={handleEditedDone} />
                 
-                <button onClick={handleEditDone}>< IoCheckmarkCircleSharp /></button>
+                <button onClick={handleEditDone} className='done'>< IoCheckmarkCircleSharp /></button>
             </div>
         </li>
     );
