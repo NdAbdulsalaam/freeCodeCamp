@@ -4,31 +4,18 @@ import InputTodo from '@/components/InputTodo';
 import TodosList from '@/components/TodosList';
 
 const TodosLogic = () => {
-    // Create todos state
-    const [todos, setTodos] = useState([
-        {
-            id: uuidv4(),
-            title: 'Setup development environment',
-            completed: false,
-        },
-        {
-            id: uuidv4(),
-            title: 'Develop website and add content',
-            completed: false,
-        },
-        {
-            id: uuidv4(),
-            title: 'Deploy to live server',
-            completed: false,
-        },
-    ])
+    // Create todos 
+    const [todos, setTodos] = useState(getSavedTodos);
 
-    useEffect(
-        () => {
+    function getSavedTodos() {
+        const temp = localStorage.getItem('todos')
+        return JSON.parse(temp) || [];
+    }
+
+    useEffect(() => {
             const toSave = JSON.stringify(todos);
             localStorage.setItem('todos', toSave);
-        },
-    [todos]);
+        }, [todos]);
 
     const handleChange = (id) => {
         setTodos((prevState) =>
