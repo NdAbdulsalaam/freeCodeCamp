@@ -5,7 +5,7 @@ import TodosList from '@/components/TodosList';
 
 const TodosLogic = () => {
     // Create todos 
-    const [todos, setTodos] = useState(getSavedTodos);
+    const [todos, setTodos] = useState(getSavedTodos());
 
     function getSavedTodos() {
         const temp = localStorage.getItem('todos')

@@ -6,7 +6,7 @@ const Header = () => {
     return(
         <header className={styles.header}>
             <h1>Todos</h1>
-            <p>Items will be stored on the browser local disk</p>
+            <p>Items will be stored on the browser's local storage</p>
         </header>
     );
     };
