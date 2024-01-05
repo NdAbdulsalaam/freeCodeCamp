@@ -1,5 +1,5 @@
 import styles from '@/styles/TodoItem.module.css';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
     const completedStyle = {
@@ -10,7 +10,8 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
       };
 
     const [edit, setEdit] = useState(false);
-    const [edited, setEdited] = useState(ItemProps.title)
+    // const [edited, setEdited] = useState(ItemProps.title)
+    const editInputRef = useRef(null);
 
     const editMode = {};
     const viewMode = {};
@@ -26,7 +27,8 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
     }
 
     const handleEditDone = () => {
-        editTodo(edited, ItemProps.id)
+        // editTodo(edited, ItemProps.id)
+        editTodo(editInputRef.current.value, ItemProps.id)
         setEdit(false);
     }
     const handleEdited= (e) => {
@@ -35,7 +37,8 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
 
     const handleEditedDone = (event) => {
         if (event.key === 'Enter') {
-            editTodo(edited, ItemProps.id)
+            // editTodo(edited, ItemProps.id)
+            editTodo(editInputRef.current.value, ItemProps.id)
             setEdit(false);
         }
     }
@@ -46,15 +49,18 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
                 <input type="checkbox" checked={ItemProps.completed}
                 onChange={() =>handleChange(ItemProps.id)} />
                  <span style={ItemProps.completed ? completedStyle : null}>
-                    {edited}
+                    {ItemProps.title}
                 </span>
 
                 <button onClick={handleEdit}>Edit</button>
                 <button onClick={() => delTodo(ItemProps.id)}>Delete</button>
             </div>
             <div style={editMode}>
-                <input type='text' value={edited} className={styles.textInput}
-                onChange={handleEdited} onKeyDown={handleEditedDone} />
+                <input type='text'  className={styles.textInput}
+                // onChange={handleEdited} value={edited}
+                ref={editInputRef}
+                defaultValue={ItemProps.title}
+                onKeyDown={handleEditedDone} />
                 
                 <button onClick={handleEditDone}>Done</button>
             </div>
