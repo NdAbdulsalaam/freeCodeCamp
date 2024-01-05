@@ -1,5 +1,7 @@
 import styles from '@/styles/TodoItem.module.css';
 import { useRef, useState } from 'react';
+import { VscTrash } from "react-icons/vsc";
+import { AiFillEdit } from "react-icons/ai";
 
 const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
     const completedStyle = {
@@ -52,8 +54,8 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
                     {ItemProps.title}
                 </span>
 
-                <button onClick={handleEdit}>Edit</button>
-                <button onClick={() => delTodo(ItemProps.id)}>Delete</button>
+                <button onClick={handleEdit}>< AiFillEdit /></button>
+                <button onClick={() => delTodo(ItemProps.id)}><VscTrash /></button>
             </div>
             <div style={editMode}>
                 <input type='text'  className={styles.textInput}
