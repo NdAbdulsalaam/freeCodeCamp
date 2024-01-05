@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import InputTodo from '@/components/InputTodo';
 import TodosList from '@/components/TodosList';
@@ -22,6 +22,13 @@ const TodosLogic = () => {
             completed: false,
         },
     ])
+
+    useEffect(
+        () => {
+            const toSave = JSON.stringify(todos);
+            localStorage.setItem('todos', toSave);
+        },
+    [todos]);
 
     const handleChange = (id) => {
         setTodos((prevState) =>
