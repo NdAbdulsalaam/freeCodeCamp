@@ -2,7 +2,7 @@ import styles from '@/styles/TodoItem.module.css';
 import { useRef, useState } from 'react';
 import { VscTrash } from "react-icons/vsc";
 import { AiFillEdit } from "react-icons/ai";
-import { IoCheckmarkCircleSharp } from "react-icons/io5";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
     const completedStyle = {
@@ -65,7 +65,7 @@ const TodoItem = ({ ItemProps, handleChange, delTodo, editTodo }) => {
                 defaultValue={ItemProps.title}
                 onKeyDown={handleEditedDone} />
                 
-                <button onClick={handleEditDone} className='done'>< IoCheckmarkCircleSharp /></button>
+                <button onClick={handleEditDone} className='done'>< IoMdCheckmarkCircleOutline /></button>
             </div>
         </li>
     );
