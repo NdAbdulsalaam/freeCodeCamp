@@ -6,7 +6,7 @@
 	"license": "MIT",
 	"keywords": ["freecodecamp", "glitch", "github", "node.js"],
 	// Allow update to latest patch (digits after the last dot) by using tilde(~) character i.e 1.2.13 to 1.2.15
-	"@freecodecamp/example": "~1.2.3", 
+	"@freecodecamp/example": "~1.2.13", 
 	"dependencies": {
 		"express": "^4.14.0"
 	},
