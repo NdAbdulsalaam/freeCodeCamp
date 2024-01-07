@@ -12,7 +12,8 @@
 	// Allow update to latest patch by using tilde(~) character
 	"@freecodecamp/example": "~1.2.13",
 	"dependencies": {
-		"express": "^4.14.0"
+		"express": "^4.14.0",
+		"@freecodecamp/example": "1.1.0"
 	},
 	"main": "server.js",
 	"scripts": {
