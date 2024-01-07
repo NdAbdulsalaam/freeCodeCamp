@@ -2,6 +2,7 @@
 	"name": "fcc-learn-npm-package-json",
 	"author": "Nurudeen Abdulsalaam",
 	"description": "A project on package.json configuration as one of the crucial steps",
+	"version": "1.2.0",
 	"dependencies": {
 		"express": "^4.14.0"
 	},
