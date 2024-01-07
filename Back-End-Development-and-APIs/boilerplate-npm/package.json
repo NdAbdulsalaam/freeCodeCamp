@@ -5,8 +5,12 @@
 	"version": "1.2.0",
 	"license": "MIT",
 	"keywords": ["freecodecamp", "glitch", "github", "node.js"],
-	// Allow update to latest patch (digits after the last dot) by using tilde(~) character i.e 1.2.13 to 1.2.15
-	"@freecodecamp/example": "~1.2.13", 
+	// Numbers 1:2:3 == MAJOR:MINOR:PATCH
+	// MAJORs add changes that won’t work with earlier versions.
+	// MINORs add new features but neither of them break what worked before.
+	// PATCHes are bug fixes
+	// Allow update to latest patch by using tilde(~) character
+	"@freecodecamp/example": "~1.2.13",
 	"dependencies": {
 		"express": "^4.14.0"
 	},
