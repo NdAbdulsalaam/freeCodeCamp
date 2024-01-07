@@ -5,7 +5,7 @@
 	"version": "1.2.0",
 	"license": "MIT",
 	"keywords": ["freecodecamp", "glitch", "github", "node.js"],
-	// Numbers 1:2:3 == MAJOR:MINOR:PATCH
+	// Numbers 1:2:3 == MAJOR.MINOR.PATCH
 	// MAJORs add changes that won’t work with earlier versions.
 	// MINORs add new features but neither of them break what worked before.
 	// PATCHes are bug fixes
