@@ -35,14 +35,14 @@ const envpath = function(req, res) {
     res.json(myMessage.message.toUpperCase()):
     res.json(myMessage)
 }
-app.get('/json', envpath)
+// app.get('/json', envpath)
 
 // 7
 const simpleLogger = function (req, res, next) {
-    console.log(req.method, req.path, req.ip);
+    console.log(req.method, req.path, "-", req.ip);
     next();
 }
-
+app.use('/json', simpleLogger)
 
 
 
