@@ -4,29 +4,29 @@ let express = require('express');
 let app = express();
 
 
-// 1
+// 2
 const myFunc = (req, res) => {
     res.send("Hello Express");
 }
 // app.get("/", myFunc)
 
-// 2
+// 3
 const indexpath = __dirname + '/views/index.html'
 const index = function(req, res) {
     res.sendFile(indexpath)
 }
 // app.get('/', index)
-// Compress step 2
-// 2
+// Compress step 3
+// 3
 app.get('/', (req, res) => res.sendFile(indexpath))
 
-// 3
+// 4
 app.use('/public', express.static('public'))
 
-// 4
+// 5
 // app.get('/json', (req, res) => res.json({"message": "Hello json"}))
 
-// 5
+// 6
 const envpath = function(req, res) {
     const myStyle = process.env.MESSAGE_STYLE
     const myMessage = {"message": "Hello json"}
@@ -35,6 +35,8 @@ const envpath = function(req, res) {
     res.json(myMessage)
 }
 app.get('/json', envpath)
+
+
 
 
 
