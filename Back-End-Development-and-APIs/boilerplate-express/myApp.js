@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 let express = require('express');
 let app = express();
 
@@ -22,7 +24,16 @@ app.get('/', (req, res) => res.sendFile(indexpath))
 app.use('/public', express.static('public'))
 
 // 4
-app.get('/json', (req, res) => res.json({"message": "Hello json"}))
+// app.get('/json', (req, res) => res.json({"message": "Hello json"}))
+
+// 5
+const envpath = function(req, res) {
+    const myStyle = process.env.MESSAGE_STYLE
+    myStyle === "uppercase"?
+    res.json({"MESSAGE": "HELLO JSON"}):
+    res.json({"message": "Hello json"})
+}
+app.get('/json', envpath)
 
 
 
