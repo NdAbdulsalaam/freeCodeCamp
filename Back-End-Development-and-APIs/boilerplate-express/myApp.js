@@ -21,6 +21,7 @@ const index = function(req, res) {
 app.get('/', (req, res) => res.sendFile(indexpath))
 
 // 4
+// the path, first argument '/public' is optional
 app.use('/public', express.static('public'))
 
 // 5
