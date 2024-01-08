@@ -39,7 +39,7 @@ app.get('/json', envpath)
 
 // 7
 const simpleLogger = function (req, res, next) {
-    
+    console.log(req.method, req.path, req.ip);
     next();
 }
 
