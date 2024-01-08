@@ -15,6 +15,9 @@ const index = function(req, res) {
 }
 app.get('/', index)
 
+// 3
+app.use('/public', express.static('public'))
+
 
 
 
