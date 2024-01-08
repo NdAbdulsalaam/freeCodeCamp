@@ -13,7 +13,10 @@ const indexpath = __dirname + '/views/index.html'
 const index = function(req, res) {
     res.sendFile(indexpath)
 }
-app.get('/', index)
+// app.get('/', index)
+// Compress step 2
+// 2
+app.get('/', (req, res) => res.sendFile(indexpath))
 
 // 3
 app.use('/public', express.static('public'))
