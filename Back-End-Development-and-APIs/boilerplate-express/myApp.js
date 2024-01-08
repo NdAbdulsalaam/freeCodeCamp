@@ -16,6 +16,7 @@ const index = function(req, res) {
     res.sendFile(indexpath)
 }
 // app.get('/', index)
+
 // Compress step 3
 // 3
 app.get('/', (req, res) => res.sendFile(indexpath))
