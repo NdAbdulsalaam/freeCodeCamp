@@ -29,9 +29,10 @@ app.use('/public', express.static('public'))
 // 5
 const envpath = function(req, res) {
     const myStyle = process.env.MESSAGE_STYLE
+    const myMessage = {"message": "Hello json"}
     myStyle === "uppercase"?
-    res.json({"MESSAGE": "HELLO JSON"}):
-    res.json({"message": "Hello json"})
+    res.json(myMessage.message.toUpperCase()):
+    res.json(myMessage)
 }
 app.get('/json', envpath)
 
