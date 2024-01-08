@@ -1,30 +1,19 @@
 let express = require('express');
 let app = express();
 
-console.log("Hellow World")
 
+// 1
 const myFunc = (req, res) => {
     res.send("Hello Express");
 }
+// app.get("/", myFunc)
 
+// 2
+const indexpath = . + 'views/index.html'
 const index = function(req, res) {
-    res.send("Comming")
+    res.send(indexpath)
 }
-
-app.get("/", myFunc)
-// app.get('/', index)
-
-
-
-
-
-
-
-
-
-
-
-
+app.get('/', index)
 
 
 
