@@ -21,6 +21,9 @@ app.get('/', (req, res) => res.sendFile(indexpath))
 // 3
 app.use('/public', express.static('public'))
 
+// 4
+app.get('/json', (req, res) => res.json({"message": "Hello json"}))
+
 
 
 
