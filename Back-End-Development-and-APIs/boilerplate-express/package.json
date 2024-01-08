@@ -10,6 +10,7 @@
   },
   "main": "server.js",
   "scripts": {
+    "_comment": "change start value back to 'node server.js' before submission",
     "start": "nodemon server.js"
   }
 }
