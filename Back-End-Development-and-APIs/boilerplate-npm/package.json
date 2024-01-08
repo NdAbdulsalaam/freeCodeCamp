@@ -1,10 +1,12 @@
-	// Numbers 1:2:3 == MAJOR.MINOR.PATCH
-	// MAJORs add changes that won’t work with earlier versions.
-	// MINORs add new features but neither of them break what worked before.
-	// PATCHes are bug fixes
-	// Allow automatic path updates by using tilde(~) character
-	// Allow automatic minor (feature) updates by using caret(^)
 {
+	"_comment": {
+			"1": "Numbers 1:2:3 == MAJOR.MINOR.PATCH",
+			"2": "MAJORs add changes that won’t work with earlier versions",
+			"3": "MINORs add new features but neither of them break what worked before",
+			"4": "PATCHes are bug fixes",
+			"5": "Allow automatic path updates by using tilde(~) character",
+			"6": "Allow automatic minor (feature) updates by using caret(^)"
+	},
 	"name": "fcc-learn-npm-package-json",
 	"author": "Nurudeen Abdulsalaam",
 	"description": "A project on package.json configuration as one of the crucial steps",
