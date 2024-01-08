@@ -2,7 +2,8 @@
 	// MAJORs add changes that won’t work with earlier versions.
 	// MINORs add new features but neither of them break what worked before.
 	// PATCHes are bug fixes
-	// Allow update to latest patch by using tilde(~) character
+	// Allow automatic path updates by using tilde(~) character
+	// Allow automatic minor (feature) updates by using caret(^)
 {
 	"name": "fcc-learn-npm-package-json",
 	"author": "Nurudeen Abdulsalaam",
@@ -10,10 +11,10 @@
 	"version": "1.2.0",
 	"license": "MIT",
 	"keywords": ["freecodecamp", "glitch", "github", "node.js"],
-	"@freecodecamp/example": "~1.2.13",
+	"@freecodecamp/example": "^1.2.13",
 	"dependencies": {
 		"express": "^4.14.0",
-		"@freecodecamp/example": "~1.2.13"
+		"@freecodecamp/example": "^1.2.13"
 	},
 	"main": "server.js",
 	"scripts": {
