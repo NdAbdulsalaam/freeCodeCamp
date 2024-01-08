@@ -37,6 +37,12 @@ const envpath = function(req, res) {
 }
 app.get('/json', envpath)
 
+// 7
+const simpleLogger = function (req, res, next) {
+    
+    next();
+}
+
 
 
 
