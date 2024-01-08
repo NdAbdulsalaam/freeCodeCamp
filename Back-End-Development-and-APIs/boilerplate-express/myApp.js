@@ -9,9 +9,9 @@ const myFunc = (req, res) => {
 // app.get("/", myFunc)
 
 // 2
-const indexpath = __dirname + 'views/index.html'
+const indexpath = __dirname + '/views/index.html'
 const index = function(req, res) {
-    res.send("While Now")
+    res.sendFile(indexpath)
 }
 app.get('/', index)
 
