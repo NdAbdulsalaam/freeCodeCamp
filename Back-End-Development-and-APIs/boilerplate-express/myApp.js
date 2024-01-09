@@ -67,13 +67,13 @@ app.use(bodyParser.urlencoded({extended:false}))
 // 10
 app.route('/name')
     .get((req, res) => {
-        const firstname = req.query.first || 'Nurudeen';
-        const lastname = req.query.last || 'Abdulsalaam';
+        const firstname = req.query.first;
+        const lastname = req.query.last;
         res.json({'name': `${firstname} ${lastname}`})
     })
     .post((req, res) => {
-        const firstname = req.body.first || 'Nurudeen';
-        const lastname = req.body.last || 'ABdulsalaam';
+        const firstname = req.body.first;
+        const lastname = req.body.last;
         res.json({'name': `${firstname} ${lastname}`})
     })
 
