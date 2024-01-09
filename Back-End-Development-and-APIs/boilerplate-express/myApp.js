@@ -8,8 +8,9 @@ let app = express();
 // 2
 const myFunc = (req, res) => {
     res.send("Hello Express");
-}
-// app.get("/", myFunc)
+    console.log("Hello Express")
+} // Also for step 11
+app.get("/", myFunc)
 
 // 3
 const indexpath = __dirname + '/views/index.html'
@@ -70,7 +71,7 @@ app.route('/name')
         const firstname = req.query.first;
         const lastname = req.query.last;
         res.json({'name': `${firstname} ${lastname}`})
-    })
+    }) // 12
     .post((req, res) => {
         const firstname = req.body.first;
         const lastname = req.body.last;
