@@ -54,7 +54,11 @@ app.get('/now', (req, res, next) => {
     }
     )
 
-
+// 9
+app.get('/:word/echo', (req, res) => {
+    const word = req.params.word;
+    res.json({echo: word})
+})
 
 
 
