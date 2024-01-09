@@ -74,7 +74,8 @@ app.route('/name')
         res.json({'name': `${firstname} ${lastname}`})
     })
 
-
+// 11
+app.use(bodyParser.urlencoded({extended:false}))
 
 
 
