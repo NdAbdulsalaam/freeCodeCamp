@@ -9,7 +9,7 @@ let app = express();
 const myFunc = (req, res) => {
     res.send("Hello Express");
     console.log("Hello Express")
-} // Also for step 11
+}
 app.get("/", myFunc)
 
 // 3
