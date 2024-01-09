@@ -60,22 +60,8 @@ app.use('/:word/echo', (req, res) => {
     const word = req.params.word;
     res.json({echo: word})
 })
-// route_path: '/user/:userId/book/:bookId'
-// actual_request_URL: '/user/546/book/6754'
-// req.params: {userId: '546', bookId: '6754'}
 
-// route_path: '/library'
-// actual_request_URL: '/library?userId=546&bookId=6754'
-// req.query: {userId: '546', bookId: '6754'}
 // 10
-// app.route('/name')
-//     .get((req, res) => {
-//     const fname = req.query.firstname;
-        // const lname = req.query.lastname;
-// })
-//     .post((req, res) {
-//     const query = req.query.;
-// })
 app.route('/name')
     .get((req, res) => {
         const firstname = req.query.first || 'Nurudeen';
