@@ -61,6 +61,9 @@ app.use('/:word/echo', (req, res) => {
     res.json({echo: word})
 })
 
+// 11
+app.use(bodyParser.urlencoded({extended:false}))
+
 // 10
 app.route('/name')
     .get((req, res) => {
@@ -74,8 +77,7 @@ app.route('/name')
         res.json({'name': `${firstname} ${lastname}`})
     })
 
-// 11
-app.use(bodyParser.urlencoded({extended:false}))
+
 
 
 
