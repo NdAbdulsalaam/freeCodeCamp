@@ -6,6 +6,7 @@ let quotesData;
 /*
   Code by Gabriel Nunes
   Modified by Todd Chaffee to use Camper gist for JSON Quote data.
+  Crafted by Nurudeen Abdulsalaam
 */
 
 var colors = [
