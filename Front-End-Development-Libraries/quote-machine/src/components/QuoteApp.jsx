@@ -1,14 +1,14 @@
 import React from "react";
 import "./styles.css"
-import SocialMedia from "./Components/SocialMedia";
-import Button from "./Components/Button";
-import Owner from "./Components/Owner";
-import Title from "./Components/Title";
+// import SocialMedia from "./Components/SocialMedia";
+import Button from "@/components/Button";
+import Owner from "@/components/Contributor";
+// import Title from "./Components/Title";
 
 export default function App() {
   const [quotes, setQuotes] = React.useState([]);
   const [randomQuote, setRandomQuote] = React.useState("");
-  const [color, setColor] = React.useState("#fff");
+  const [color, setColor] = React.useState("#16a085'");
 
   React.useEffect(() => {
     async function fetchData() {
@@ -22,7 +22,8 @@ export default function App() {
   }, []);
 
   const getNewQuote = () => {
-    const colors = ["#808080", "#A9A9A9", "#696969", "#C0C0C0", "#DCDCDC", "#D3D3D3"];
+    const colors = [ '#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964',
+                      '#342224', '#472E32', '#BDBB99', '#77B1A9', '#73A857'];
     let randIndex = Math.floor(Math.random() * quotes.length);
     let randColorIndex = Math.floor(Math.random() * colors.length);
     setRandomQuote(quotes[randIndex]);
