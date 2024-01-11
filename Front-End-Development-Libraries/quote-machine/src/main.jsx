@@ -1,4 +1,15 @@
-import App from "./App"
-import ReactDOM  from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import QuoteApp from "@/components/QuoteApp";
+import '@/styles.css'
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const domContainer = document.getElementById("root")
+const root = ReactDOM.createRoot(domContainer)
+
+root.render(
+  <React.StrictMode>
+    <QuoteApp />
+  </React.StrictMode>
+)
+
+// ReactDOM.render(<QuoteApp />, document.getElementById("root"))
