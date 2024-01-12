@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import actionButton from '@/components/Button';
+import Button from '@/components/Button';
 
 function QuoteFetcher() {
   const [quoteData, setQuoteData] = useState({ quote: '', author: '' });
@@ -35,7 +35,8 @@ function QuoteFetcher() {
 
   return (
     <>
-      <actionButton getQuote={getQuote} />
+      <h1>{quoteData.quote}</h1>
+      <Button getQuote={getQuote} />
     </>
   );
 }
