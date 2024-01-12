@@ -1,4 +1,4 @@
-const actionButton = function Button({getQuote, quote}){
+const Button = function ({getQuote, quote}){
     return(
         <div className="buttons">
              <a className="button" id="tweet-quote" title="Tweet this quote!" target="_top">
@@ -12,4 +12,4 @@ const actionButton = function Button({getQuote, quote}){
     )
 }
 
-export default actionButton
+export default Button
