@@ -15,7 +15,6 @@ const QuoteApp = () => {
       <div id="quote-box">
         <FetchQuote onDataFetch={handleDataFetch} />
         <Logic quotes={quotes} />
-        <Button onClick={onclick}/>
       </div>
       <div className="footer">by <a href="https://github.com/ndabdulsalaam" target="_blank">Nurudeen Abdulsalaam</a></div>
     </div>
