@@ -1,3 +1,4 @@
+// Logic.js
 import React, { useEffect, useState } from 'react';
 
 const Logic = ({ quotes }) => {
@@ -23,29 +24,15 @@ const Logic = ({ quotes }) => {
 
   const getQuote = () => {
     const randomQuote = getRandomQuote();
-
     setCurrentQuote(randomQuote);
-
-    const tweetUrl =
-      'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
-      encodeURIComponent('"' + randomQuote.quote + '" ' + randomQuote.author);
-
-    const tumblrUrl =
-      'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' +
-      encodeURIComponent(randomQuote.author) +
-      '&content=' +
-      encodeURIComponent(randomQuote.quote) +
-      '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button';
-
-    // Set your state or dispatch actions to update UI accordingly
-    console.log('Random Quote:', randomQuote);
-    console.log('Tweet URL:', tweetUrl);
-    console.log('Tumblr URL:', tumblrUrl);
   };
 
   useEffect(() => {
-    getQuote();
-  }, []); // Run once on component mount
+    if (quotes.length > 0 && Object.keys(currentQuote).length === 0) {
+      // Set the initial quote when quotes are available and currentQuote is empty
+      getQuote();
+    }
+  }, [quotes, currentQuote]);
 
   return (
     <div>

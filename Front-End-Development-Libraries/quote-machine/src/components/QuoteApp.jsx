@@ -69,36 +69,23 @@
 
 // QuoteApp.js
 import React, { useState } from 'react';
-import fetchQuote from '@/components/fetchQuote';
+import FetchQuote from '@/components/FetchQuote';
 import Logic from '@/components/Logic';
 import Button from '@/components/Button';
 
 const QuoteApp = () => {
   const [quotes, setQuotes] = useState([]);
-  const [currentQuote, setCurrentQuote] = useState({});
 
   const handleDataFetch = (data) => {
     setQuotes(data);
-    // Set initial quote when data is fetched
-    setCurrentQuote(data[Math.floor(Math.random() * data.length)]);
-  };
-
-  const handleNewQuote = () => {
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    setCurrentQuote(randomQuote);
   };
 
   return (
     <div id="wrapper">
       <div id="quote-box">
-      <div class="quote-text">
-                    <i class="fa fa-quote-left"></i><span id="text"></span>
-                    </div>
-                    <div class="quote-author">- <span id="author"></span></div>
-                   
-        {/* Render your quote components using currentQuote state */}
-        <Logic quotes={quotes} onQuoteChange={handleNewQuote} />
-        <Button onClick={handleNewQuote} />
+        <FetchQuote onDataFetch={handleDataFetch} />
+        <Logic quotes={quotes} />
+        <Button />
       </div>
       <div className="footer">by <a href="https://github.com/ndabdulsalaam" target="_blank">Nurudeen Abdulsalaam</a></div>
     </div>
