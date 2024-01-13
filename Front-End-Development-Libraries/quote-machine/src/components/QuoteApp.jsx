@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import FetchQuote from '@/components/FetchQuote';
 import Logic from '@/components/Logic';
-import Button from '@/components/Button';
 
 const QuoteApp = () => {
   const [quotes, setQuotes] = useState([]);
