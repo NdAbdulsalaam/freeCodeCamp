@@ -66,30 +66,15 @@ const Logic = ({ quotes }) => {
   };
 
   useEffect(() => {
-    // Function to handle the initial rendering
-    const handleInitialRender = () => {
-      if (currentQuote.length === 0) {
-        getQuote();
-      }
-    };
-  
-    // Attach the event listener for subsequent clicks
-    const button = document.getElementById('new-quote');
-    if (button) {
-      button.addEventListener('click', getQuote);
-    }
-  
-    // Perform the initial rendering
-    handleInitialRender();
-  
+    console.log(currentQuote)
+    // Initial rendering should only occur after the button is pressed
+    document.getElementById('new-quote').addEventListener('click', getQuote);
+
     // Cleanup the event listener when the component unmounts
     return () => {
-      if (button) {
-        button.removeEventListener('click', getQuote);
-      }
+      document.getElementById('new-quote').removeEventListener('click', getQuote);
     };
-  }, [currentQuote, quotes]);
-  
+  }, [quotes]);
 
   return (
     <div>
