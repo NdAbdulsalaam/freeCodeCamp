@@ -45,7 +45,7 @@
 
 import React, { useEffect, useState } from 'react';
 
-const CodeFetcher = ({ onDataFetch }) => {
+const fetchQuote = ({ onDataFetch }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -65,4 +65,4 @@ const CodeFetcher = ({ onDataFetch }) => {
   return null;
 };
 
-export default CodeFetcher;
+export default fetchQuote;
