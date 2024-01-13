@@ -1,68 +1,103 @@
-import React from "react";
-// import SocialMedia from "./Components/SocialMedia";
-import Button from "@/components/Button";
-import Contributor from "@/components/Contributor";
-import FetchQuote from '@/components/FetchQuote';
+// import React from "react";
+// // import SocialMedia from "./Components/SocialMedia";
+// import Button from "@/components/Button";
+// import Contributor from "@/components/Contributor";
+// import FetchQuote from '@/components/FetchQuote';
 
 
-const QuoteApp = function() {
+// const QuoteApp = function() {
   
-    $('#tweet-quote').attr(
-      'href',
-      'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
-        encodeURIComponent('"' + quote + '" ' + author)
-    );
+//     $('#tweet-quote').attr(
+//       'href',
+//       'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
+//         encodeURIComponent('"' + quote + '" ' + author)
+//     );
   
-    $('#tumblr-quote').attr(
-      'href',
-      'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' +
-        encodeURIComponent(author) +
-        '&content=' +
-        encodeURIComponent(quote) +
-        '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'
-    );
+//     $('#tumblr-quote').attr(
+//       'href',
+//       'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' +
+//         encodeURIComponent(author) +
+//         '&content=' +
+//         encodeURIComponent(quote) +
+//         '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'
+//     );
   
-    $('.quote-text').animate({ opacity: 0 }, 500, function () {
-      $(this).animate({ opacity: 1 }, 500);
-      $('#text').text(randomQuote.quote);
-    });
+//     $('.quote-text').animate({ opacity: 0 }, 500, function () {
+//       $(this).animate({ opacity: 1 }, 500);
+//       $('#text').text(randomQuote.quote);
+//     });
   
-    $('.quote-author').animate({ opacity: 0 }, 500, function () {
-      $(this).animate({ opacity: 1 }, 500);
-      $('#author').html(randomQuote.author);
-    });
+//     $('.quote-author').animate({ opacity: 0 }, 500, function () {
+//       $(this).animate({ opacity: 1 }, 500);
+//       $('#author').html(randomQuote.author);
+//     });
   
-    var color = Math.floor(Math.random() * colors.length);
-    $('html body').animate(
-      {
-        backgroundColor: colors[color],
-        color: colors[color]
-      },
-      1000
-    );
-    $('.button').animate(
-      {
-        backgroundColor: colors[color]
-      },
-      1000
-    );
-  }
+//     var color = Math.floor(Math.random() * colors.length);
+//     $('html body').animate(
+//       {
+//         backgroundColor: colors[color],
+//         color: colors[color]
+//       },
+//       1000
+//     );
+//     $('.button').animate(
+//       {
+//         backgroundColor: colors[color]
+//       },
+//       1000
+//     );
+//   }
   
-  $(document).ready(function () {
-    getQuotes().then(() => {
-      getQuote();
-    });
+//   $(document).ready(function () {
+//     getQuotes().then(() => {
+//       getQuote();
+//     });
   
-    $('#new-quote').on('click', getQuote);
-  });
-  return(
-      <div id="wrapper">
+//     $('#new-quote').on('click', getQuote);
+//   });
+//   return(
+//       <div id="wrapper">
+//       <div id="quote-box">
+//       <FetchQuote />
+//       <Button getQuote={getQuote} />
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default QuoteApp;
+
+// QuoteApp.js
+import React, { useState } from 'react';
+import fetchQuote from '@/components/fetchQuote';
+import Logic from '@/components/Logic';
+import Button from '@/components/Button';
+
+const QuoteApp = () => {
+  const [quotes, setQuotes] = useState([]);
+  const [currentQuote, setCurrentQuote] = useState({});
+
+  const handleDataFetch = (data) => {
+    setQuotes(data);
+    // Set initial quote when data is fetched
+    setCurrentQuote(data[Math.floor(Math.random() * data.length)]);
+  };
+
+  const handleNewQuote = () => {
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    setCurrentQuote(randomQuote);
+  };
+
+  return (
+    <div id="wrapper">
       <div id="quote-box">
-      <FetchQuote />
-      <Button getQuote={getQuote} />
+        {/* Render your quote components using currentQuote state */}
+        <Logic quotes={quotes} onQuoteChange={handleNewQuote} />
+        <Button onClick={handleNewQuote} />
       </div>
+      <div className="footer">by <a href="https://github.com/ndabdulsalaam" target="_blank">Nurudeen Abdulsalaam</a></div>
     </div>
-  )
-}
+  );
+};
 
 export default QuoteApp;
