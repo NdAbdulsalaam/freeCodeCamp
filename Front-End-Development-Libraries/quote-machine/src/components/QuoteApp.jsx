@@ -91,6 +91,11 @@ const QuoteApp = () => {
   return (
     <div id="wrapper">
       <div id="quote-box">
+      <div class="quote-text">
+                    <i class="fa fa-quote-left"></i><span id="text"></span>
+                    </div>
+                    <div class="quote-author">- <span id="author"></span></div>
+                   
         {/* Render your quote components using currentQuote state */}
         <Logic quotes={quotes} onQuoteChange={handleNewQuote} />
         <Button onClick={handleNewQuote} />
