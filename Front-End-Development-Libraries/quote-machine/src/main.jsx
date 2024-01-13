@@ -8,7 +8,6 @@ const root = ReactDOM.createRoot(domContainer);
 
 root.render(
   <React.StrictMode>
-    <h1>Hello React</h1>
     < QuoteApp />
   </React.StrictMode>
 );
