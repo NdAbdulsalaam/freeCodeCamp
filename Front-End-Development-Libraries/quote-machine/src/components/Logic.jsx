@@ -68,13 +68,14 @@ const Logic = ({ quotes }) => {
   useEffect(() => {
     console.log(currentQuote)
     // Initial rendering should only occur after the button is pressed
+    currentQuote.quote.length ===1? getQuote:
     document.getElementById('new-quote').addEventListener('click', getQuote);
 
     // Cleanup the event listener when the component unmounts
     return () => {
       document.getElementById('new-quote').removeEventListener('click', getQuote);
     };
-  }, [quotes]);
+  }, []);
 
   return (
     <div>
