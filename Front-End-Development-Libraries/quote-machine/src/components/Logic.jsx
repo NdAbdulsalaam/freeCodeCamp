@@ -23,23 +23,74 @@ const Logic = ({ quotes }) => {
 
   const getQuote = () => {
     const randomQuote = getRandomQuote();
+
+    // Update Twitter link
+    const tweetLink = `https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${encodeURIComponent(
+      `"${randomQuote.quote}" ${randomQuote.author}`
+    )}`;
+    document.getElementById('tweet-quote').setAttribute('href', tweetLink);
+
+    // Update Tumblr link
+    const tumblrLink = `https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=${encodeURIComponent(
+      randomQuote.author
+    )}&content=${encodeURIComponent(
+      randomQuote.quote
+    )}&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button`;
+    document.getElementById('tumblr-quote').setAttribute('href', tumblrLink);
+
+    // Animate quote text and author
+    animate('.quote-text', randomQuote.quote);
+    animate('.quote-author', randomQuote.author);
+
+    // Animate background and button color
+    animate('html body', null, {
+      backgroundColor: colors[randomColorIndex],
+      color: colors[randomColorIndex]
+    });
+    animate('.button', null, {
+      backgroundColor: colors[randomColorIndex]
+    });
+
     setCurrentQuote(randomQuote);
   };
 
+  const animate = (selector, text, styles) => {
+    const element = document.querySelector(selector);
+    element.animate(
+      [
+        { opacity: '0' },
+        { opacity: '1' },
+      ],
+      {
+        duration: 500,
+        fill: 'forwards',
+      }
+    );
+
+    if (text) {
+      document.querySelector(selector + ' span').innerText = text;
+    }
+
+    if (styles) {
+      Object.keys(styles).forEach((style) => {
+        document.querySelector(selector).style[style] = styles[style];
+      });
+    }
+  };
+
   useEffect(() => {
-    if (quotes.length > 0 && Object.keys(currentQuote).length === 0) {
-      // Set the initial quote when quotes are available and currentQuote is empty
+    if (quotes.length > 0) {
       getQuote();
     }
-  }, [quotes, currentQuote]);
+  }, [quotes]);
 
   return (
     <div>
       <div className="quote-text">
         <i className="fa fa-quote-left"></i>
-        <span id="text">{currentQuote.quote}</span>
+        <span id="text"></span>
       </div>
-      <div className="quote-author">- <span id="author">{currentQuote.author}</span></div>
+      <div className="quote-author">- <span id="author"></span></div>
       <div className="buttons">
         <a className="button" id="tweet-quote" title="Tweet this quote!" target="_top">
           <i className="fa fa-twitter"></i>
@@ -47,6 +98,9 @@ const Logic = ({ quotes }) => {
         <a className="button" id="tumblr-quote" title="Post this quote on tumblr!" target="_blank">
           <i className="fa fa-tumblr"></i>
         </a>
+        <button className="button" id="new-quote" onClick={getQuote}>
+          New quote
+        </button>
       </div>
     </div>
   );
