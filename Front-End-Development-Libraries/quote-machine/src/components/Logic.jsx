@@ -17,12 +17,31 @@ const Logic = ({ quotes }) => {
     '#73A857'
   ]);
 
-  const getRandomQuote = () => {
-    return quotes[Math.floor(Math.random() * quotes.length)];
+  const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
+
+  const getRandomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
+
+  const animate = (selector, value) => {
+    const element = document.querySelector(selector);
+    element.style.opacity = '0';
+
+    setTimeout(() => {
+      element.style.opacity = '1';
+      if (value !== undefined) {
+        document.querySelector(selector + ' span').innerText = value;
+      }
+    }, 500);
+  };
+
+  const updateColors = () => {
+    const color = getRandomColor();
+    document.body.style.backgroundColor = color;
+    document.querySelector('.button').style.backgroundColor = color;
   };
 
   const getQuote = () => {
     const randomQuote = getRandomQuote();
+    setCurrentQuote(randomQuote);
 
     // Update Twitter link
     const tweetLink = `https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${encodeURIComponent(
@@ -43,54 +62,26 @@ const Logic = ({ quotes }) => {
     animate('.quote-author', randomQuote.author);
 
     // Animate background and button color
-    animate('html body', null, {
-      backgroundColor: colors[randomColorIndex],
-      color: colors[randomColorIndex]
-    });
-    animate('.button', null, {
-      backgroundColor: colors[randomColorIndex]
-    });
-
-    setCurrentQuote(randomQuote);
-  };
-
-  const animate = (selector, text, styles) => {
-    const element = document.querySelector(selector);
-    element.animate(
-      [
-        { opacity: '0' },
-        { opacity: '1' },
-      ],
-      {
-        duration: 500,
-        fill: 'forwards',
-      }
-    );
-
-    if (text) {
-      document.querySelector(selector + ' span').innerText = text;
-    }
-
-    if (styles) {
-      Object.keys(styles).forEach((style) => {
-        document.querySelector(selector).style[style] = styles[style];
-      });
-    }
+    updateColors();
   };
 
   useEffect(() => {
-    if (quotes.length > 0) {
-      getQuote();
-    }
+    // Initial rendering should only occur after the button is pressed
+    document.getElementById('new-quote').addEventListener('click', getQuote);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      document.getElementById('new-quote').removeEventListener('click', getQuote);
+    };
   }, [quotes]);
 
   return (
     <div>
       <div className="quote-text">
         <i className="fa fa-quote-left"></i>
-        <span id="text"></span>
+        <span id="text">{currentQuote.quote}</span>
       </div>
-      <div className="quote-author">- <span id="author"></span></div>
+      <div className="quote-author">- <span id="author">{currentQuote.author}</span></div>
       <div className="buttons">
         <a className="button" id="tweet-quote" title="Tweet this quote!" target="_top">
           <i className="fa fa-twitter"></i>
@@ -98,7 +89,7 @@ const Logic = ({ quotes }) => {
         <a className="button" id="tumblr-quote" title="Post this quote on tumblr!" target="_blank">
           <i className="fa fa-tumblr"></i>
         </a>
-        <button className="button" id="new-quote" onClick={getQuote}>
+        <button className="button" id="new-quote">
           New quote
         </button>
       </div>
