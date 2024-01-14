@@ -68,10 +68,8 @@ const Logic = ({ quotes }) => {
     updateColors();
   };
 
-  useEffect(() =>{
-    if(quotes.length){
-      getQuote()
-    }
+  useEffect(() => {
+    quotes.length > 1 && getQuote()
   }, [quotes])
 
   const handleClick = () => {
