@@ -78,11 +78,11 @@ const Logic = ({ quotes }) => {
   // }, []);
 
   useEffect(() => {
-    getQuote
+    getQuote()
   }, [])
 
   const handleClick = () => {
-    getQuote
+    getQuote()
   }
 
   return (
