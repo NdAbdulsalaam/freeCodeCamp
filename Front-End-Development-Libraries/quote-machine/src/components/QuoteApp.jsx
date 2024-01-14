@@ -4,7 +4,6 @@ import Logic from '@/components/Logic';
 
 const QuoteApp = () => {
   const [quotes, setQuotes] = useState([]);
-    console.log(quotes.length)
   const handleDataFetch = (data) => {
     setQuotes(data);
   };
