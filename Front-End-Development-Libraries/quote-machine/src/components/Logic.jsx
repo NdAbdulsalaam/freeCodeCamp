@@ -65,17 +65,25 @@ const Logic = ({ quotes }) => {
     updateColors();
   };
 
-  useEffect(() => {
-    console.log(currentQuote)
-    // Initial rendering should only occur after the button is pressed
-    currentQuote.quote.length ===1? getQuote:
-    document.getElementById('new-quote').addEventListener('click', getQuote);
+  // useEffect(() => {
+  //   console.log(currentQuote)
+  //   // Initial rendering should only occur after the button is pressed
+  //   currentQuote.quote.length ===1? getQuote:
+  //   document.getElementById('new-quote').addEventListener('click', getQuote);
 
-    // Cleanup the event listener when the component unmounts
-    return () => {
-      document.getElementById('new-quote').removeEventListener('click', getQuote);
-    };
-  }, []);
+  //   // Cleanup the event listener when the component unmounts
+  //   return () => {
+  //     document.getElementById('new-quote').removeEventListener('click', getQuote);
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    getQuote
+  }, [])
+
+  const handleClick = () => {
+    getQuote
+  }
 
   return (
     <div>
@@ -91,7 +99,7 @@ const Logic = ({ quotes }) => {
         <a className="button" id="tumblr-quote" title="Post this quote on tumblr!" target="_blank">
           <i className="fa fa-tumblr"></i>
         </a>
-        <button className="button" id="new-quote">
+        <button className="button" id="new-quote" onClick={handleClick}>
           New quote
         </button>
       </div>
