@@ -65,9 +65,9 @@ const Logic = ({ quotes }) => {
     updateColors();
   };
 
-  useEffect(() => {
-    getQuote()
-  }, [])
+  // useEffect(() => {
+  //   getQuote()
+  // }, [])
 
   const handleClick = () => {
     getQuote()

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const FetchQuote = () => {
+const FetchQuote = ({ onDataFetch }) => {
   const fetchData = async () => {
     try {
       const response = await fetch(
@@ -15,6 +15,7 @@ const FetchQuote = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
 };
 
 export default FetchQuote;
