@@ -65,7 +65,7 @@ const MarkdownPreviewer = () => {
           <textarea id="editor" value={markdown} onChange={handleChange}></textarea>
         </div>
         <div className="preview">
-          <h2>Preview</h2>
+          <h2>Previewer</h2>
         <div id="preview" dangerouslySetInnerHTML={{ __html: marked(markdown) }} />
         </div>
     </div>
