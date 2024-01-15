@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import MarkdownPreviewer from "@/components/MarkdownPreviewer";
-import GPT from '@/components/GPT'
 import '@/styles.css'
 
 const domContainer = document.getElementById("root");
