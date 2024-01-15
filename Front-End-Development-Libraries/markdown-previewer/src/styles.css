@@ -1,6 +1,6 @@
 body {
-  background-color: #333;
-  color: #333;
+  background-color: rgb(48, 29, 216);
+  color: rgb(71, 228, 36);
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   display: flex;
@@ -40,16 +40,6 @@ div {
   z-index: 2;
 }
 
-body {
-  background-color: #333;
-  color: #333;
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 
 .footer {
   width: 450px;

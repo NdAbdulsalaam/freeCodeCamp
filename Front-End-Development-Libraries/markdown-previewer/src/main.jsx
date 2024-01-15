@@ -8,7 +8,6 @@ const root = ReactDOM.createRoot(domContainer);
 
 root.render(
   <React.StrictMode>
-    {/* < GPT /> */}
     < MarkdownPreviewer />
   </React.StrictMode>
 );
