@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Marked } from "marked";
+import { marked } from "marked";
 
 const MarkdownPreviewer = () => {
   const initalText = `
@@ -28,12 +28,19 @@ const MarkdownPreviewer = () => {
   
   **Happy Hacking**  
   `
-  const[markdown, setMardown] = useState('')
+  const[markdown, setMardown] = useState("*initalText*")
 
 
   return (
     <div>
-        <h1>Hello</h1>
+
+      <h1>Hello</h1>
+        <div className="editor">
+          <textarea id="editor"></textarea>
+        </div>
+        <div className="preview">
+        <div id="preview" dangerouslySetInnerHTML={{ __html: marked(markdown) }} />
+        </div>
     </div>
   )
 }
