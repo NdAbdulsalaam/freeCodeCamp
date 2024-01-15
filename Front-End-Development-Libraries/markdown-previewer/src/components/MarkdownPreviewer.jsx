@@ -59,17 +59,34 @@ const MarkdownPreviewer = () => {
 
 
   return (
-    <div>
-        <div className="editor">
-          <h2>Editor</h2>
-          <textarea id="editor" value={markdown} onChange={handleChange}></textarea>
+    <div className="container mt-5">
+      <div className="row">
+        <div className="col-md-6">
+          <div className="editor">
+            <h2>Editor</h2>
+            <textarea
+              id="editor"
+              className="form-control"
+              value={markdown}
+              onChange={handleChange}
+              rows="10"
+            />
+          </div>
         </div>
-        <div className="preview">
-          <h2>Previewer</h2>
-        <div id="preview" dangerouslySetInnerHTML={{ __html: marked(markdown) }} />
+        <div className="col-md-6">
+          <div className="preview">
+            <h2>Previewer</h2>
+            <div
+              id="preview"
+              className="border p-3"
+              dangerouslySetInnerHTML={{ __html: marked(markdown) }}
+            />
+          </div>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
+
 
 export default MarkdownPreviewer;
