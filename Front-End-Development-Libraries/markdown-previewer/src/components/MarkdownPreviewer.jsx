@@ -2,41 +2,70 @@ import React, { useState } from "react";
 import { marked } from "marked";
 
 const MarkdownPreviewer = () => {
-  const initalText = `
-  # BY: Nurudeen Abdulsalaam
-
-  ## AS: freeCodeCamp [Project](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer)
+  const initialText = `
+  # Welcome to my React Markdown Previewer!
   
-  Inline code: \`const variable = "Hello World";\`
+  ## By: Nurudeen Abdulsalaam...
+  ### And here's some other cool stuff:
   
-  Code block:
+  Heres some code, \`<div></div>\`, between 2 backticks.
   
-  \`\`\`The day is bright
-  function greet() {
-    console.log("Hello World!");
+  \`\`\`
+  // this is multi-line code:
+  
+  function anotherExample(firstLine, lastLine) {
+    if (firstLine === '\\\`\`\`' && lastLine === '\\\`\`\`') {
+      return multiLineCode;
+    }
   }
   \`\`\`
   
-  - List item 1
-  - List item 2
+  You can also make text **bold**... whoa!
+  Or _italic_.
+  Or... wait for it... **_both!_**
+  And feel free to go crazy ~~crossing stuff out~~.
   
-  > Blockquote: This is a blockquote.
+  There's also [links](https://www.freecodecamp.org), and
+  > Block Quotes!
   
-  ![Markdown Image](../public/i-love-markdown.jpg)
+  And if you want to get really crazy, even tables:
   
-  **Happy Hacking!**  
-  `
-  const[markdown, setMardown] = useState(initalText)
+  | Wild Header     | Crazy Header    | Another Header? |
+  | --------------- | --------------- | --------------- |
+  | Your content can | be here, and it | can be here.... |
+  | And here.       | Okay.           | I think we get it. |
+  
+  
+  - And of course, there are lists.
+    - Some are bulleted.
+      - With different indentation levels.
+        - That look like this.
+  
+  1. And there are numbered lists too.
+  1. Use just 1s if you want!
+  1. And last but not least, let's not forget embedded images:
+  
+  ![Markdown cover image](../public/i-love-markdown.jpg)
+  `;
+  
+  console.log(initialText);
+  
+
+  const[markdown, setMardown] = useState(initialText)
+
+  const handleChange = (e) => {
+    setMardown(e.target.value);
+  }
 
 
   return (
     <div>
-
-      <h1>Hello</h1>
         <div className="editor">
-          <textarea id="editor"></textarea>
+          <h2>Editor</h2>
+          <textarea id="editor" value={markdown} onChange={handleChange}></textarea>
         </div>
         <div className="preview">
+          <h2>Preview</h2>
         <div id="preview" dangerouslySetInnerHTML={{ __html: marked(markdown) }} />
         </div>
     </div>
