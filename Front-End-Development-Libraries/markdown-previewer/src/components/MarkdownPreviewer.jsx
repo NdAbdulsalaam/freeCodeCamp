@@ -11,4 +11,4 @@ const MarkdownPreviewer = () => {
   )
 }
 
-export default App;
+export default MarkdownPreviewer;
