@@ -45,7 +45,7 @@ const MarkdownPreviewer = () => {
   1. Use just 1s if you want!
   1. And last but not least, let's not forget embedded images:
   
-  ![Markdown cover image](../public/i-love-markdown.jpg)
+  ![Markdown cover image](/i-love-markdown.jpg)
   `;
   
   console.log(initialText);
