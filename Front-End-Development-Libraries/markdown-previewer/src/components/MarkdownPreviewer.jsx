@@ -60,8 +60,8 @@ const MarkdownPreviewer = () => {
 
   return (
     <div className="container mt-5">
-      <div className="row">
-        <div className="col-md-6">
+      <div className="bg-blue-400">
+        <div className="bg-blue-400">
           <div className="editor">
             <h2>Editor</h2>
             <textarea
