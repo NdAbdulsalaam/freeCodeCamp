@@ -62,24 +62,22 @@ const MarkdownPreviewer = () => {
     <div className="bg-emerald-500 text-white p-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <div className="editor">
-            <div className="bg-emerald-700">
+            <div className="bg-emerald-700 pl-3">
               <h2>Editor</h2>
               </div>
-           <div className="bg-emerald-400">
             <textarea
                 id="editor"
-                className="form-control bg-emerald-400"
+                className="form-control bg-emerald-400 w-full"
                 value={markdown}
                 onChange={handleChange}
                 rows="10"
               />
-           </div>
           </div>
           <div className="preview">
-            <div className="bg-emerald-700"><h2>Previewer</h2></div>
+            <div className="bg-emerald-700 pl-3"><h2>Previewer</h2></div>
             <div
               id="preview"
-              className="border p-3 bg-emerald-400"
+              className="p-3 bg-emerald-400"
               dangerouslySetInnerHTML={{ __html: marked(markdown) }}
             />
     </div>
